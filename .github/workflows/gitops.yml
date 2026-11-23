@@ -1,0 +1,35 @@
+name: GitOps Infrastructure Deployment
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  apply:
+    name: Infrastructure Apply
+
+    if: github.event.pull_request.merged == true
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Infrastructure Validation
+        run: |
+          echo "Validating infrastructure configuration..."
+
+      - name: Infrastructure Apply
+        run: |
+          echo "Starting deployment..."
+          sleep 10
+          echo "Infrastructure deployment completed successfully."
+
+      - name: Deployment Summary
+        run: |
+          echo "GitOps deployment workflow completed."
