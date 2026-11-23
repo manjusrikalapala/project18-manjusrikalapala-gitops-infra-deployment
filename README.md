@@ -98,3 +98,10 @@ A protected GitHub Environment named `production` is configured with mandatory r
 Manjusri Kalapala
 
 Advanced App Engineering Analyst
+
+## Change History
+
+### Update 1
+
+Added deployment approval workflow demonstration for GitOps implementation.
+
